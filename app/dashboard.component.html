@@ -1,0 +1,10 @@
+<h3>Top Sales</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let session of sessionDay" class="col-1-4">
+    <div class="module session">
+      <div *ngIf="session.total > 900" >
+      	<p>Day {{session.day}} - <span>{{session.date}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

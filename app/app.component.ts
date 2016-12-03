@@ -5,7 +5,10 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <a routerLink="/sessions">Sessions</a>
+    <nav>
+    	<a routerLink="/dashboard">Dashboard</a>
+    	<a routerLink="/sessions">Sessions</a>
+    </nav>
    	<router-outlet></router-outlet>
   `
 })

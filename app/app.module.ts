@@ -4,6 +4,7 @@ import { FormsModule }    from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 
 import { AppComponent }  from './app.component';
+import { DashboardComponent }  from './dashboard.component';
 import { SessionDetailComponent } from './session-detail.component';
 import { SessionsComponent }     from './sessions.component';
 import { SessionService }         from './session.service';
@@ -17,11 +18,21 @@ import { SessionService }         from './session.service';
   		{
 	    	path: 'sessions',
 	    	component: SessionsComponent
-  		}
+  		},
+  		{
+			path: '',
+		  	redirectTo: '/dashboard',
+		  	pathMatch: 'full'
+		},
+  		{
+  			path: 'dashboard',
+  			component: DashboardComponent
+		}
 	])
 ],
   declarations: [
   	AppComponent,
+  	DashboardComponent,
   	SessionDetailComponent,
   	SessionsComponent
   ],
