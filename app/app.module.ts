@@ -14,20 +14,24 @@ import { SessionService }         from './session.service';
   imports: [
   	BrowserModule,
   	FormsModule,
-	RouterModule.forRoot([
+	  RouterModule.forRoot([
   		{
 	    	path: 'sessions',
 	    	component: SessionsComponent
   		},
   		{
-			path: '',
+			  path: '',
 		  	redirectTo: '/dashboard',
 		  	pathMatch: 'full'
 		},
   		{
   			path: 'dashboard',
   			component: DashboardComponent
-		}
+		},
+    {
+      path: 'detail/:day',
+      component: SessionDetailComponent
+    },
 	])
 ],
   declarations: [

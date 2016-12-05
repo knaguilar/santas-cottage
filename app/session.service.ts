@@ -8,4 +8,9 @@ export class SessionService {
 	getSessions(): Promise<LastYear[]> {
 		return Promise.resolve(SANTADAYS);
 	}
+
+	getSession(id: number): Promise<LastYear> {
+  		return this.getSessions()
+             .then(session => session.find(session => session.day === id));
+	}
 }
