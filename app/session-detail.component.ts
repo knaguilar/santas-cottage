@@ -7,16 +7,17 @@ import { Location }                 from '@angular/common';
 import { SessionService } from './session.service';
 
 
-import { LastYear } from './lastyear';
+// import { LastYear } from './lastyear';
 
 @Component({
 	moduleId: module.id,
   	selector: 'my-session-detail',
   	templateUrl: 'session-detail.component.html',
+  	styleUrls: [ 'sessions-detail.component.css' ]
 })
 
 export class SessionDetailComponent implements OnInit {
-	@Input() session: LastYear;
+	// @Input() session: LastYear;
 
 	constructor(
 		private sessionService: SessionService,
