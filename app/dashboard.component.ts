@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LastYear} from './lastyear';
+import { LastYear } from './lastyear';
 
 import { SessionService } from './session.service';
 
@@ -14,10 +14,10 @@ export class DashboardComponent implements OnInit {
 
   	constructor(private sessionService: SessionService) { }
 
-  	highSales(value): void {
+  	highSales(value: number): boolean {
 	  return value >= 900;
 	}
 	ngOnInit(): void {
-		this.sessionService.getSessions().then(sessionDay => this.sessionDay = sessionDay;
+		this.sessionService.getSessions().then(sessionDay => this.sessionDay = sessionDay);
   	}
 }

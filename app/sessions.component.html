@@ -1,0 +1,12 @@
+<h2>Today: {{today | date: 'yMMMMEEEEd'}}</h2>
+<ul class="operating">
+	<li *ngFor="let session of sessionDay" [class.selected]="session === selectedSession" (click)="onSelect(session)">
+		<span class="badge">Day: {{session.day}}</span>{{session.date}}
+	</li>
+</ul>
+<div *ngIf="selectedSession">
+  <h2>
+    More about {{selectedSession.date}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
