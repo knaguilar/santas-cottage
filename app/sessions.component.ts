@@ -41,6 +41,12 @@ export class SessionsComponent implements OnInit {
 	gotoDetail(): void {
  		this.router.navigate(['/detail', this.selectedSession.day]);
 	}
+
+	daysSince(): number {
+		var date = new Date();
+		var day = date.getDate() + 6;
+      	return day;
+	}
 }
 
 

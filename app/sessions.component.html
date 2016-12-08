@@ -1,4 +1,4 @@
-<h2>Today: {{today | date: 'yMMMMEEEEd'}}</h2>
+<h2>Day {{daysSince()}}: {{today | date: 'yMMMMEEEEd'}}</h2>
 <ul class="operating">
 	<li *ngFor="let session of sessionDay" [class.selected]="session === selectedSession" (click)="onSelect(session)">
 		<span class="badge">Day: {{session.day}}</span>{{session.date}}
