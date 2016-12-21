@@ -12,13 +12,15 @@ import { SessionService } from './session.service';
 })
 export class DashboardComponent implements OnInit {
 	sessionDay: LastYear[] = [];
+	sessionNow: LastYear[] = [];
 
   	constructor(private sessionService: SessionService) { }
 
   	highSales(value: number): boolean {
-	  return value >= 900;
+	  return value >= 400;
 	}
 	ngOnInit(): void {
 		this.sessionService.getSessions().then(sessionDay => this.sessionDay = sessionDay);
+		this.sessionService.getSessionsNow().then(sessionNow => this.sessionNow = sessionNow);
   	}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LastYear} from './lastyear';
+import { LastYear } from './lastyear';
+import { ThisYear } from './thisyear';
 
 import { SessionService } from './session.service';
 
@@ -21,6 +22,9 @@ export class SessionsComponent implements OnInit {
 	today: number = Date.now();
 	selectedSession: LastYear;
 
+	thisSessionDay: ThisYear[];
+	thisSelectedSession: ThisYear;
+
 	constructor(
 		private router: Router,
 		private sessionService: SessionService) { }
@@ -30,17 +34,31 @@ export class SessionsComponent implements OnInit {
 
   	}
 
-	ngOnInit(): void {
-		this.getSessions();
+  	getSessionsNow(): void {
+    	this.sessionService.getSessionsNow().then(thisSessionDay => this.thisSessionDay = thisSessionDay);
+
   	}
 
-  	onSelect(session: LastYear): void {
-	  this.selectedSession = session;
+	ngOnInit(): void {
+		this.getSessionsNow();
+  	}
+
+  	onSelect(session: ThisYear): void {
+	  this.thisSelectedSession = session;
+	  this.gotoDetail();
+
 	}
 
 	gotoDetail(): void {
- 		this.router.navigate(['/detail', this.selectedSession.day]);
+ 		this.router.navigate(['/detail', this.thisSelectedSession.day]);
+
 	}
+
+	daysSince(): number {
+ 		var date = new Date();
+ 		var day = date.getDate() + 6;
+       	return day;
+ 	}
 }
 
 

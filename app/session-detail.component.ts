@@ -7,6 +7,7 @@ import { Location }                 from '@angular/common';
 import { SessionService } from './session.service';
 
 import { LastYear } from './lastyear';
+import { ThisYear } from './thisyear';
 
 @Component({
 	moduleId: module.id,
@@ -17,6 +18,7 @@ import { LastYear } from './lastyear';
 
 export class SessionDetailComponent implements OnInit {
 	session: LastYear;
+	thisSession: ThisYear;
 
 	constructor(
 		private sessionService: SessionService,
@@ -28,6 +30,10 @@ export class SessionDetailComponent implements OnInit {
 		this.route.params
 		.switchMap((params: Params) => this.sessionService.getSession(+params['day']))
 		.subscribe(session => this.session = session);
+
+		this.route.params
+		.switchMap((params: Params) => this.sessionService.getThisSession(+params['day']))
+		.subscribe(thisSession => this.thisSession = thisSession);
 	}
 
 	goBack(): void {

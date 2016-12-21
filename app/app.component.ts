@@ -17,4 +17,5 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 	title = 'EastBrook Mall Santa Set 2016';
+  //add date and day #
 }
