@@ -41,4 +41,4 @@ import { SessionService }         from './session.service';
 })
 
 
-export class AppModule { }
+export class AppModule {}
