@@ -33,7 +33,7 @@ export class SessionsComponent implements OnInit {
 		this.getSessions();
   	}
 
-  	onSelect(session: ThisYear): void {
+  	onSelect(session: LastYear): void {
 	  this.selectedSession = session;
 	  this.gotoDetail();
 

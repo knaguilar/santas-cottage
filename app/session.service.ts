@@ -12,10 +12,6 @@ export class SessionService {
   	constructor(private http: Http) { }
 
 	getSessions(): Promise<LastYear[]> {
-		return Promise.resolve(SANTADAYS);
-	}
-
-	getSessions(): Promise<LastYear[]> {
     return this.http.get(this.sessionsUrl)
                .toPromise()
                .then(response => response.json().data as LastYear[])
@@ -33,7 +29,7 @@ export class SessionService {
   		return ses;
 	}
 
-	getThisSession(id: number): Promise<ThisYear> {
+	getThisSession(id: number): Promise<LastYear> {
 		var ses = this.getSessions()
         	.then(session => session.find(session => session.day === id && session.year === 2016));
 		return ses;
