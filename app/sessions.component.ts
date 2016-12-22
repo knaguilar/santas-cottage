@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LastYear } from './lastyear';
-import { ThisYear } from './thisyear';
 
 import { SessionService } from './session.service';
 
@@ -17,13 +16,9 @@ import { Router } from '@angular/router';
 
 
 export class SessionsComponent implements OnInit {
-	// title = 'EastBrook Mall Santa Set 2016';
 	sessionDay: LastYear[];
 	today: number = Date.now();
 	selectedSession: LastYear;
-
-	thisSessionDay: ThisYear[];
-	thisSelectedSession: ThisYear;
 
 	constructor(
 		private router: Router,
@@ -34,23 +29,18 @@ export class SessionsComponent implements OnInit {
 
   	}
 
-  	getSessionsNow(): void {
-    	this.sessionService.getSessionsNow().then(thisSessionDay => this.thisSessionDay = thisSessionDay);
-
-  	}
-
 	ngOnInit(): void {
-		this.getSessionsNow();
+		this.getSessions();
   	}
 
   	onSelect(session: ThisYear): void {
-	  this.thisSelectedSession = session;
+	  this.selectedSession = session;
 	  this.gotoDetail();
 
 	}
 
 	gotoDetail(): void {
- 		this.router.navigate(['/detail', this.thisSelectedSession.day]);
+ 		this.router.navigate(['/detail', this.selectedSession.day]);
 
 	}
 

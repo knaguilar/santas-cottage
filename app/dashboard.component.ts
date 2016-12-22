@@ -21,6 +21,6 @@ export class DashboardComponent implements OnInit {
 	}
 	ngOnInit(): void {
 		this.sessionService.getSessions().then(sessionDay => this.sessionDay = sessionDay);
-		this.sessionService.getSessionsNow().then(sessionNow => this.sessionNow = sessionNow);
+		// this.sessionService.getSessionsNow().then(sessionNow => this.sessionNow = sessionNow);
   	}
 }

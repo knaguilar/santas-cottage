@@ -4,10 +4,6 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { LastYear } from './lastyear';
-import { ThisYear } from './thisyear';
-
-import { SANTADAYS } from './mock-sessions';
-import { SANTA16 } from './mock-sessions';
 
 @Injectable()
 export class SessionService {
@@ -19,17 +15,27 @@ export class SessionService {
 		return Promise.resolve(SANTADAYS);
 	}
 
-	getSessionsNow(): Promise<ThisYear[]> {
-		return Promise.resolve(SANTA16);
+	getSessions(): Promise<LastYear[]> {
+    return this.http.get(this.sessionsUrl)
+               .toPromise()
+               .then(response => response.json().data as LastYear[])
+               .catch(this.handleError);
+  }
+
+	private handleError(error: any): Promise<any> {
+	console.error('An error occurred', error); // for demo purposes only
+	return Promise.reject(error.message || error);
 	}
 
 	getSession(id: number): Promise<LastYear> {
-  		return this.getSessions()
-             .then(session => session.find(session => session.day === id));
+		var ses = this.getSessions()
+             .then(session => session.find(session => session.day === id && session.year === 2015));
+  		return ses;
 	}
 
 	getThisSession(id: number): Promise<ThisYear> {
-  		return this.getSessionsNow()
-             .then(thisSession => thisSession.find(thisSession => thisSession.day === id));
+		var ses = this.getSessions()
+        	.then(session => session.find(session => session.day === id && session.year === 2016));
+		return ses;
 	}
 }

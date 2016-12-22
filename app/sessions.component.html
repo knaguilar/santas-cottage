@@ -1,7 +1,9 @@
 <!-- <h2>Day {{daysSince()}}: {{today | date: 'yMMMMEEEEd'}}</h2> -->
 <ul class="operating">
-	<li *ngFor="let session of thisSessionDay" [class.selected]="session === thisSelectedSession" (click)="onSelect(session)">
-		<span class="badge">Day: {{session.day}}</span>{{session.date}}
+	<li *ngFor="let session of sessionDay" [class.hidden]= "session.year === 2015">
+		<div [class.selected]="session === selectedSession" (click)="onSelect(session)">
+			<span class="badge">Day: {{session.day}}</span>{{session.date}}
+		</div>
 	</li>
 </ul>
 <!-- <div *ngIf="thisSelectedSession">

@@ -7,7 +7,6 @@ import { Location }                 from '@angular/common';
 import { SessionService } from './session.service';
 
 import { LastYear } from './lastyear';
-import { ThisYear } from './thisyear';
 
 @Component({
 	moduleId: module.id,
@@ -18,7 +17,7 @@ import { ThisYear } from './thisyear';
 
 export class SessionDetailComponent implements OnInit {
 	session: LastYear;
-	thisSession: ThisYear;
+	thisSession: LastYear;
 
 	constructor(
 		private sessionService: SessionService,
