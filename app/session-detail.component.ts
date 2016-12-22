@@ -38,6 +38,4 @@ export class SessionDetailComponent implements OnInit {
 	goBack(): void {
 	  this.location.back();
 	}
-
-
 }

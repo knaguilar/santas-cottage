@@ -7,6 +7,8 @@ import { LastYear } from './lastyear';
 
 @Injectable()
 export class SessionService {
+	private headers = new Headers({'Content-Type': 'application/json'});
+
 	private sessionsUrl = 'api/sessions';  // URL to web api
 
   	constructor(private http: Http) { }
@@ -16,22 +18,20 @@ export class SessionService {
                .toPromise()
                .then(response => response.json().data as LastYear[])
                .catch(this.handleError);
-  }
-
-	private handleError(error: any): Promise<any> {
-	console.error('An error occurred', error); // for demo purposes only
-	return Promise.reject(error.message || error);
-	}
+  	}
 
 	getSession(id: number): Promise<LastYear> {
-		var ses = this.getSessions()
+		return this.getSessions()
              .then(session => session.find(session => session.day === id && session.year === 2015));
-  		return ses;
 	}
 
 	getThisSession(id: number): Promise<LastYear> {
-		var ses = this.getSessions()
+		return this.getSessions()
         	.then(session => session.find(session => session.day === id && session.year === 2016));
-		return ses;
+	}
+
+	private handleError(error: any): Promise<any> {
+		console.error('An error occurred', error); // for demo purposes only
+		return Promise.reject(error.message || error);
 	}
 }
