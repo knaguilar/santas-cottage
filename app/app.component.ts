@@ -5,17 +5,14 @@ import { Component } from '@angular/core';
   moduleId: module.id,
   selector: 'my-app',
   template: `
-    <h1>{{title}}</h1>
-    <div *ngIf="daysSince() < 30">
-    <h2>Day {{daysSince()}}</h2>
-    </div>
-    <h2>{{today | date: 'yMMMMEEEEd'}}</h2>
-
-    <nav>
-    	<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    	<a routerLink="/sessions" routerLinkActive="active">Sessions</a>
-    </nav>
-   	<router-outlet></router-outlet>
+      <div class="container">
+      <h1 class="title">{{title}}</h1>
+      <nav>
+      	<a routerLink="/dashboard" routerLinkActive="active">Top Sales</a>
+      	<a routerLink="/sessions" routerLinkActive="active">Sessions</a>
+      </nav>
+     	<router-outlet></router-outlet>
+      </div>
   `,
   styleUrls: [ 'app.component.css' ]
 })
@@ -30,3 +27,9 @@ export class AppComponent {
         return day;
   }
 }
+
+// <div *ngIf="daysSince() < 30">
+//   <h2 id="dayCounter">Day {{daysSince()}}</h2>
+// </div>
+
+// <h2 id="date">{{today | date: 'yMMMMEEEEd'}}</h2>
