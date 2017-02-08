@@ -1,10 +1,13 @@
 	<h2>Top Santa Days</h2>
 <div class="dash-container">
 	<!-- <div class="grid grid-pad"> -->
-		<a *ngFor="let session of sessionDay"  [routerLink]="['/detail', session.day]">
-		      <div class="module session" *ngIf="session.year === 2015 && session.total > 800">
+	<div class="session" *ngFor="let session of sessionDay"  [routerLink]="['/detail', session.day]" [style.display] ="session.year === 2015 && session.total > 1000?'block':'none'">
+		<a>
+		      <div class="module">
 		      	<p>Day {{session.day}} </p>
 		      </div>
 	    </a>
-	<!-- </div> -->
+	</div>
 </div>
+
+<!-- *ngIf="session.year === 2015 && session.total > 800" -->
