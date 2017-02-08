@@ -1,13 +1,14 @@
-	<h2>Top Santa Days</h2>
+	<h2>Top Santa Days 2016</h2>
 <div class="dash-container">
 	<!-- <div class="grid grid-pad"> -->
-	<div class="session" *ngFor="let session of sessionDay"  [routerLink]="['/detail', session.day]" [style.display] ="session.year === 2015 && session.total > 1000?'block':'none'">
+	<div class="session" *ngFor="let session of sessionDay"  [routerLink]="['/detail', session.day]" [style.display] ="session.year === 2016 && session.total > 750?'block':'none'">
 		<a>
 		      <div class="module">
 		      	<p>Day {{session.day}} </p>
 		      </div>
 	    </a>
 	</div>
+	<!-- TODO: Add graph of 2016 season sales -->
 </div>
 
 <!-- *ngIf="session.year === 2015 && session.total > 800" -->

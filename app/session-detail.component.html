@@ -8,7 +8,8 @@
 	<div class="this-session" *ngIf="thisSession">
 		<h3>{{thisSession.date}}</h3>
 		<p>Packages Sold: {{thisSession.guests}}</p>
-		<p>Total: $ {{thisSession.total }}</p>
+		<p>Total: {{thisSession.total | currency:"USD":true}}</p>
 	</div>
 </div>
+<!-- TODO: add boxes around each session & change font styles -->
 <p><button (click)="goBack()">Back</button></p>

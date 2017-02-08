@@ -32,6 +32,7 @@ button {
 /*change hover color*/
 button:hover {
   background-color: red;
+  color: #eee;
 }
 button:disabled {
   background-color: #eee;

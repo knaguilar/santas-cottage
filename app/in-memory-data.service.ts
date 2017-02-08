@@ -56,10 +56,10 @@ export class InMemoryDataService implements InMemoryDbService {
       { year: 2016, day: 24, date: 'Sunday, December 18, 2016', total: 1300, guests: 68},
       { year: 2016, day: 25, date: 'Monday, December 19, 2016', total: 689, guests: 33},
       { year: 2016, day: 26, date: 'Tuesday, December 20, 2016', total: 688, guests: 34},
-      { year: 2016, day: 27, date: 'Wednesday, December 21, 2016', total: 0, guests: 0},
-      { year: 2016, day: 28, date: 'Thursday, December 22, 2016', total: 0, guests: 0},
-      { year: 2016, day: 29, date: 'Friday, December 23, 2016', total: 0, guests: 0},
-      { year: 2016, day: 30, date: 'Saturday, December 24, 2016', total: 0, guests: 0}
+      { year: 2016, day: 27, date: 'Wednesday, December 21, 2016', total: 859, guests: 45},
+      { year: 2016, day: 28, date: 'Thursday, December 22, 2016', total: 780, guests: 39},
+      { year: 2016, day: 29, date: 'Friday, December 23, 2016', total: 1340, guests: 71},
+      { year: 2016, day: 30, date: 'Saturday, December 24, 2016', total: 1104, guests: 58}
     ];
     return {sessions};
   }
