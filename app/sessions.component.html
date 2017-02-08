@@ -1,7 +1,7 @@
 <!-- <h2>Day {{daysSince()}}: {{today | date: 'yMMMMEEEEd'}}</h2> -->
-<div class="operating sessions-container grid-pad">
-	<div class="col-1-3" *ngFor="let session of sessionDay" [class.hidden]= "session.year === 2015">
-		<p class="full" [class.selected]="session === selectedSession" (click)="onSelect(session)">
+<div class="sessions-container operating grid-pad">
+	<div *ngFor="let session of sessionDay" [class.hidden]= "session.year === 2015">
+		<p [class.selected]="session === selectedSession" (click)="onSelect(session)">
 			<span class="badge">Day {{session.day}}</span>{{session.date}}
 		</p>
 	</div>
