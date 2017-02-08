@@ -1,12 +1,14 @@
-<div *ngIf="session">
-	<h3>{{session.date}}</h3>
-	<p>Packages Sold: {{session.guests}}</p>
-	<p>Total: {{session.total | currency:"USD":true}}</p>
-</div>
+<div class="detail-container">
+	<div class="last-session" *ngIf="session">
+		<h3>{{session.date}}</h3>
+		<p>Packages Sold: {{session.guests}}</p>
+		<p>Total: {{session.total | currency:"USD":true}}</p>
+	</div>
 
-<div *ngIf="thisSession">
-	<h3>{{thisSession.date}}</h3>
-	<p>Packages Sold: {{thisSession.guests}}</p>
-	<p>Total: $ {{thisSession.total }}</p>
-	<p><button (click)="goBack()">Back</button></p>
+	<div class="this-session" *ngIf="thisSession">
+		<h3>{{thisSession.date}}</h3>
+		<p>Packages Sold: {{thisSession.guests}}</p>
+		<p>Total: $ {{thisSession.total }}</p>
+	</div>
 </div>
+<p><button (click)="goBack()">Back</button></p>
