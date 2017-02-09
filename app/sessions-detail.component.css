@@ -5,11 +5,20 @@
   justify-content: space-around;
 }
 
+.last-session, .this-session, h3 {
+  background-color: #A11730;
+  color: #eee;
+  padding: 1%;
+  text-align: center;
+  border-radius: 15px;
+}
+
+
 label {
   display: inline-block;
   width: 3em;
   margin: .5em 0;
-  color: #607D8B;
+  /*color: #607D8B;*/
   font-weight: bold;
 }
 input {
